@@ -1,0 +1,19 @@
+name: syn_logger_file_writer
+description: Service dependency for the synaptic_thread_safe_logger, required to write logs to files
+version: 1.0.0
+repository: https://github.com/synaptik-develop/syn_logger_file_writer
+
+environment:
+  sdk: ">=3.7.0 <4.0.0"
+
+dependencies:
+  intl: ^0.20.2
+  path: ^1.9.1
+  stack_trace: ^1.12.1
+  syn_log_interface: ^1.0.2
+  syn_platform_utils: ^1.0.1
+
+dev_dependencies:
+  dart_code_linter: ^2.0.0
+  dartdoc: ^8.3.2
+  lint: ^2.3.0
