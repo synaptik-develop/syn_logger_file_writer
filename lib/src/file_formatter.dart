@@ -5,6 +5,8 @@ import 'package:syn_log_interface/syn_log_interface.dart';
 ///
 /// Split string into multiline, prettify output.
 class FileFormatter implements LogFormatter {
+  /// Default `const` constructor.
+  const FileFormatter();
   static const _space = '  ';
   @override
   String format(LogEvent event) {

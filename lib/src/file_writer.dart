@@ -10,15 +10,15 @@ import 'package:syn_logger_file_writer/src/file_formatter.dart';
 class FileWriter implements LogWriter {
   FileWriter({required Directory logDirectory, String? fileNamePrefix})
     : _logDirectory = logDirectory,
-      _fileNamePrefix = fileNamePrefix;
+      _fileNamePrefix = fileNamePrefix ?? '';
 
-  final String? _fileNamePrefix;
+  final String _fileNamePrefix;
   final Directory _logDirectory;
 
   final _fileNameFormatter = DateFormat('yyyy-MM-ddTHH.mm.ss.mmm');
 
   @override
-  final formatter = FileFormatter();
+  final formatter = const FileFormatter();
 
   IOSink? _fileSink;
 
@@ -32,7 +32,7 @@ class FileWriter implements LogWriter {
 
   String _generateLogFileName() {
     final now = _fileNameFormatter.format(DateTime.now());
-    return '${_fileNamePrefix ?? ""}$now.log';
+    return '$_fileNamePrefix $now.log';
   }
 
   IOSink _createFileAndOpenToWrite() =>
